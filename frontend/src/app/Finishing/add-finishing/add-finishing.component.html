@@ -1,0 +1,48 @@
+<div class="container">
+  <h1 class="text-success" style="text-align: center;">Add Finishing Information</h1>
+  <form class="p-4" (ngSubmit)="submission()">
+    
+    <div class="row mb-3">
+      <!--
+      <div class="col-md-6">
+        <label for="finish_id" class="form-label">Finish ID</label>
+        <input type="number" class="form-control" id="finish_id" name="finish_id" [(ngModel)]="finish.finish_id">
+      </div>
+       -->
+      <!--<div class="col-md-6">
+        <label for="order_id" class="form-label">Order ID</label>
+        <input type="number" class="form-control" id="order_id" name="order_id" [(ngModel)]="finish.order.order_id">
+      </div>-->
+
+      <div class="col-md-6">
+        <label for="order_id" class="form-label">Order ID</label>
+        <select name="order_id" [(ngModel)]="finish.order.order_id">
+          <option *ngFor="let order of orders" [value]="order.order_id">
+            {{order.order_name}}
+          </option>
+        </select>
+      </div>
+    </div>
+    
+
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label for="finishing_date" class="form-label">Finishing Date</label>
+        <input type="date" class="form-control" id="finishing_date" name="finishing_date" [(ngModel)]="finish.finishing_date">
+      </div>
+      <div class="col-md-6">
+        <label for="finish_qty" class="form-label">Finish Qty</label>
+        <input type="number" class="form-control" id="finish_qty" name="finish_qty" [(ngModel)]="finish.finish_qty">
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label for="packing_done" class="form-label">Packing Done</label>
+        <input type="text" class="form-control" id="packing_done" name="packing_done" [(ngModel)]="finish.packing_done">
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>

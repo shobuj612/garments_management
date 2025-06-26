@@ -1,0 +1,16 @@
+<div class="container mt-4">
+  <table class="table table-bordered table-striped table-hover text-center mx-auto" style="width: 50%;">
+    <thead class="table-dark">
+      <tr>
+        <th>Employee ID</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let attendance of list">
+        <td>{{ attendance.employee?.employeeId }}</td>
+        <td>{{ attendance.date }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

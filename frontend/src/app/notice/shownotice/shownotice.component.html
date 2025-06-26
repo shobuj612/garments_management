@@ -1,0 +1,31 @@
+<div class="container mt-4" *ngIf="showTable">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h1 class="text-success">Notice</h1>
+    <button type="button" class="btn-close" aria-label="Close" (click)="closeTable()"></button>
+  </div>
+
+  <table class="table table-bordered table-striped">
+    <thead class="table-dark">
+      <tr>
+        <th>Id</th>
+        <th>Notice Name</th>
+        <th>Download</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let file of fileList">
+        <td>{{ file.id }}</td>
+        <td>
+          <a [href]="'http://localhost:8080/api/notices/file/' + file.id" target="_blank">
+            {{ file.fileName }}
+          </a>
+        </td>
+        <td>
+          <a [href]="'http://localhost:8080/api/notices/file/' + file.id + '?download=true'" target="_blank">
+            <button class="btn btn-outline-dark btn-sm">PDF</button>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

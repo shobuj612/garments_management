@@ -1,0 +1,27 @@
+<div class="container">
+  <h1 class="text-success" style="text-align: center;">Sewing List Information</h1>
+  <table class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <th>Sewing ID</th>
+        <th>Order ID</th>
+        <th>Sewing Start Date</th>
+        <th>Sewing End Date</th>
+        <th>Sewing Qty</th>
+      
+        
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Data rows -->
+        <tr>
+          <td>{{item.sewing_id}}</td>
+          <td>{{item.order.order_id}}</td>
+          <td>{{item.sewing_start_date}}</td>
+          <td>{{item.sewing_end_date}}</td>
+          <td>{{item.sewing_qty}}</td>
+        </tr>
+    </tbody>
+  </table>
+  
+</div>

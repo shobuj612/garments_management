@@ -1,0 +1,21 @@
+<div class="container" *ngIf="show">
+  <div class="card mt-4">
+    <div class="card-header d-flex justify-content-between align-items-center">
+      <h1 class="text-success mb-0">Tender Form</h1>
+      <button type="button" class="btn-close" aria-label="Close" (click)="showForm()"></button>
+    </div>
+
+    <div class="card-body">
+      <form (ngSubmit)="uploadsFile()">
+        <div class="mb-3">
+          <label for="file" class="form-label">Choose PDF File:</label>
+          <input type="file" class="form-control"  (change)="sentFile($event)" />
+        </div>
+
+        <button type="submit" class="btn btn-success">Submit Tender</button>
+      </form>
+    </div>
+  </div>
+
+  <button class="btn btn-secondary mt-3" routerLink="/job">Back</button>
+</div>

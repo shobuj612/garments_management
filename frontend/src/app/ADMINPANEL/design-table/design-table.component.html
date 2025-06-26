@@ -1,0 +1,28 @@
+<div class="container">
+  <h1 class="text-success" style="text-align: center;">  Designlist </h1>
+  <table class="table table-bordered table-hover" >
+    <thead>
+      <tr>
+        <th>DesignId</th>
+        <th>OrderId</th>
+        <th>Design Name</th>
+        <th>Design Image URL</th>
+        <th>Status</th>
+        <th>Remarks</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Data rows -->
+        <tr>
+          <td>{{item.design_id}}</td>
+          <td>{{item.order.order_id}}</td>
+          <td>{{item.design_name}}</td>
+          <td>{{item.design_image_url}}</td>
+          <td>{{item.status}}</td>
+          <td>{{item.remarks}}</td>
+          
+        </tr>
+    </tbody>
+  </table>
+  
+</div>

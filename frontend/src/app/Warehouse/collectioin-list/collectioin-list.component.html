@@ -1,0 +1,36 @@
+<div class="container">
+  <h1 style="text-align: center;">WareHouselist</h1>
+  <table class="table table-bordered table-striped mt-4">
+  <thead class="table">
+     <tr>
+      <th colspan="5" style="text-align: right; padding-right: 10px;">
+        <button  (click)="mydownload()" class="btn btn-info">Download</button>
+      </th>
+    </tr>
+    <tr>
+      <th>Warehouse ID</th>
+      <th>Order ID</th>
+      <th>Received Date</th>
+      <th>Stored Qty</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+   @for (item of collect_order; track item) {
+    <tr>
+      <td>{{item.warehouse_id}}</td>
+      <td>{{item.order.order_id}}</td>
+      <td>{{item.received_date}}</td>
+      <td>{{item.stored_qty}}</td>
+      <td>
+        <button type="button" class="btn btn-success" (click)="Edit(item)">Edit</button>
+        <button type="button" class="btn btn-danger" (click)=" Delete(item)">Delete</button>
+      </td>
+    </tr>
+   }
+  </tbody>
+</table>
+
+
+
+</div>

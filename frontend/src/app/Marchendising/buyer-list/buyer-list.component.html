@@ -1,0 +1,39 @@
+<table class="table table-bordered table-striped">
+  <thead class="table">
+
+    <!-- Row for button spanning all columns -->
+    <tr>
+      <th colspan="7" style="text-align: right; padding-right: 10px;">
+        <button class="btn btn-info" (click)="downloadReport()">Download</button>
+      </th>
+    </tr>
+
+    <!-- Header row -->
+    <tr>
+      <th>Buyer ID</th>
+      <th>Buyer Name</th>
+      <th>Contact Person</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Address</th>
+      <th>Action</th>
+    </tr>
+
+  </thead>
+  <tbody>
+    @for (item of collect_order; track item) {
+    <tr>
+      <td>{{ item.buyerId }}</td>
+      <td>{{ item.buyerName }}</td>
+      <td>{{ item.contactPerson }}</td>
+      <td>{{ item.email }}</td>
+      <td>{{ item.phone }}</td>
+      <td>{{ item.address }}</td>
+      <td>
+        <button class="btn btn-success" (click)="Edit(item)">Edit</button>
+        <button class="btn btn-danger" (click)="Delete(item)">Delete</button>
+      </td>
+    </tr>
+    }
+  </tbody>
+</table>

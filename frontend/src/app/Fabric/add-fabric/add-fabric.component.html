@@ -1,0 +1,52 @@
+<div class="container">
+  <h1 class="text-success" style="text-align: center;">Add Fabric</h1>
+
+  <form (ngSubmit)="submission()">
+   
+    <div class="row mb-3">
+       <!--
+      <div class="col-md-6">
+        <label for="fabric_id" class="form-label">Fabric ID</label>
+        <input type="number" class="form-control" id="fabric_id" name="fabric_id" [(ngModel)]="farbric.fabric_id">
+      </div>
+       -->
+     <!-- <div class="col-md-6">
+        <label for="order_id" class="form-label">Order ID</label>
+        <input type="number" class="form-control" id="order_id" name="order_id" [(ngModel)]="farbric.order.order_id">
+      </div>-->
+
+       <div class="col-md-6">
+        <label for="order_id" class="form-label">Order ID</label>
+         <select name="order_id" [(ngModel)]="farbric.order.order_id" >
+          <option *ngFor="let order of orders" [value]="order.order_id">
+            {{order.order_name}}
+          </option>
+         </select>
+      </div>
+    </div>
+    
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label for="fabric_type" class="form-label">Fabric Type</label>
+        <input type="text" class="form-control" id="fabric_type" name="fabric_type" [(ngModel)]="farbric.fabric_type">
+      </div>
+      <div class="col-md-6">
+        <label for="fabric_qty" class="form-label">Fabric Qty</label>
+        <input type="number" class="form-control" id="fabric_qty" name="fabric_qty" [(ngModel)]="farbric.fabric_qty">
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label for="received_date" class="form-label">Received Date</label>
+        <input type="date" class="form-control" id="received_date" name="received_date" [(ngModel)]="farbric.received_date">
+      </div>
+      <div class="col-md-6">
+        <label for="available_stock" class="form-label">Available Stock</label>
+        <input type="number" class="form-control" id="available_stock" name="available_stock" [(ngModel)]="farbric.available_stock">
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>

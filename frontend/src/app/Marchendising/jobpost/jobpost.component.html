@@ -1,0 +1,12 @@
+<div class="container">
+    
+<ul
+*ngIf="isAtRoot()" 
+style="list-style-type: none; display: flex; gap: 10px; text-align: center;">
+    <li><button type="button" class="btn btn-success" routerLink="mynotice">UploadNotice</button></li>
+    <li><button type="button" class="btn btn-warning" routerLink="mytender">Uploadtender</button></li>
+    <li><button type="button" class="btn btn-info" routerLink="myetender">Uploadetender</button></li>
+    <li><button type="button" class="btn btn-primary" routerLink="mycirculer">Uploadcirculer</button></li>
+</ul>
+<router-outlet></router-outlet>
+</div>

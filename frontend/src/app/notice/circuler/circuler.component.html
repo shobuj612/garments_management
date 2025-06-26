@@ -1,0 +1,36 @@
+<div class="container" *ngIf="show">
+    <div class="card mt-4">
+        <div class="card-header d-flex justify-content-between align-items-center">
+            <h1 class="text-success">Circuler List</h1>
+            <button type="button" class="btn-close" aria-label="Close" (click)="closeTable()"></button>
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Circuler Name</th>
+                        <th>Download</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let iqram of circulerList">
+                        <td>
+                            {{iqram.id}}
+                        </td>
+                        <td>
+                            <a [href]="'http://localhost:8080/api/circuler/file/'+iqram.id" target="_blank">
+                                {{iqram.fileName}}
+                            </a>
+                        </td>
+                        <td>
+                            <a [href]="'http://localhost:8080/api/circuler/file/'+iqram.id+'?download=true'" target="_blank">
+                                <button  class="btn btn-outline-dark">PDF</button>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

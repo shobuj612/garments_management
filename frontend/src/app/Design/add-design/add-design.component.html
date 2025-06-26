@@ -1,0 +1,63 @@
+<div class="container">
+  <h1 class="text-success" style="text-align: center;">Add Design</h1>
+  <form class="container mt-4" (ngSubmit)="submission()">
+    
+    <div class="row mb-3">
+      <!--
+      <div class="col-md-6">
+        <label for="design_id" class="form-label">Design ID:</label>
+        <input type="number" name="design_id" id="design_id" class="form-control" [(ngModel)]="desingn.design_id" />
+      </div>
+        -->
+      <!--<div class="col-md-6">
+        <label for="order_id" class="form-label">Order ID:</label>
+        <input type="number" name="order_id" id="order_id" class="form-control" [(ngModel)]="desingn.order.order_id" />
+      </div>-->
+
+      <div class="col-md-6">
+        <label for="order_id" class="form-label">Order ID:</label>
+        <select name="order_id" [(ngModel)]="desingn.order.order_id">
+          <option *ngFor="let order of orders" [value]="order.order_id">
+            {{order.order_name}}
+          </option>
+        </select>
+      </div>
+    </div>
+   
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label for="design_name" class="form-label">Design Name:</label>
+        <input type="text" name="design_name" id="design_name" class="form-control" [(ngModel)]="desingn.design_name" />
+      </div>
+      <div class="col-md-6">
+        <label for="design_image_url" class="form-label">Design Image URL:</label>
+        <input type="text" name="design_image_url" id="design_image_url" class="form-control" [(ngModel)]="desingn.design_image_url" />
+      </div>
+    </div>
+  
+    <div class="row mb-3">
+      <!--<div class="col-md-6">
+        <label for="status" class="form-label">Status:</label>
+        <input type="text" name="status" id="status" class="form-control" [(ngModel)]="desingn.status" />
+      </div>-->
+      <div class="col-md-6">
+    <label for="status" class="form-label">Status:</label>
+    <select name="status" class="form-select" [(ngModel)]="desingn.status">
+      <option value="progress">progress</option>
+      <option value="pending">pending</option>
+      <option value="running">running</option>
+      <option value="finish">finish</option>
+      <option value="not start">not start</option>
+    </select>
+  </div>
+      <div class="col-md-6">
+        <label for="remarks" class="form-label">Remarks:</label>
+        <input type="text" name="remarks" id="remarks" class="form-control" [(ngModel)]="desingn.remarks" />
+      </div>
+    </div>
+  
+    <div class="text-end">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </form>
+</div>

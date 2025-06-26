@@ -1,0 +1,26 @@
+<div class="container">
+  <h1 class="text-success" style="text-align: center;">fabriclist</h1>
+  <table class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <th>Fabric ID</th>
+        <th>Order ID</th>
+        <th>Fabric Type</th>
+        <th>Fabric Qty</th>
+        <th>Received Date</th>
+        <th>Available Stock</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Data rows -->
+        <tr>
+          <td>{{item.fabric_id}}</td>
+          <td>{{item.order.order_id}}</td>
+          <td>{{item.fabric_type}}</td>
+          <td>{{item.fabric_qty}}</td>
+          <td>{{item.available_stock}}</td>
+          <td>{{item.received_date}}</td>
+        </tr>
+    </tbody>
+  </table>
+</div>

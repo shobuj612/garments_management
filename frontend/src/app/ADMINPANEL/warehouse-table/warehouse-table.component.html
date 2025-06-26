@@ -1,0 +1,23 @@
+<div class="container">
+  <h1 style="text-align: center;">WareHouselist</h1>
+  <table class="table table-bordered table-striped mt-4">
+  <thead class="table">
+    
+    <tr>
+      <th>Warehouse ID</th>
+      <th>Order ID</th>
+      <th>Received Date</th>
+      <th>Stored Qty</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{item.warehouse_id}}</td>
+      <td>{{item.order.order_id}}</td>
+      <td>{{item.received_date}}</td>
+      <td>{{item.stored_qty}}</td>
+    </tr>
+  </tbody>
+</table>
+</div>

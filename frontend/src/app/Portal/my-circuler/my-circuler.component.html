@@ -1,0 +1,23 @@
+<div class="container" *ngIf="show">
+    <div class="card mt-4">
+        <div class="card-header d-flex justify-content-between align-items-center">
+         <h1 class="text-success">Circuler Form</h1>
+         <button type="button" class="btn-close" aria-level="Close" (click)="showForm()"></button>
+     </div>
+     <div class="card-body">
+        <form (ngSubmit)="uploadFile()">
+            <div class="mt-4">
+                <label for="">Choose the file</label>
+                <input type="file" name="file" id="file" (change)="setFile($event)">
+            </div>
+            <br>
+            <div class="mt-4">
+                <button type="submit" class="btn btn-success" >upload</button>
+            </div>
+        </form>
+        <div><button class="btn btn-secondary" routerLink="/job">Back</button></div>
+     </div>
+    </div>
+</div>
+
+

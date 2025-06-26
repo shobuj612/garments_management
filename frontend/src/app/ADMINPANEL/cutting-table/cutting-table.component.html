@@ -1,0 +1,29 @@
+<div class="container">
+  <h1 class="text-success" style="text-align:  center;">Cutting list information</h1>
+  <table class="table table-bordered table-hover">
+    <thead>
+      
+      <tr>
+        <th>Cutting ID</th>
+        <th>Order ID</th>
+        <th>Cutting Start Date</th>
+        <th>Cutting End Date</th>
+        <th>Cut Qty</th>
+        <th>Supervisor Name</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Data rows -->
+        <tr>
+          <td>{{item.cutting_id}}</td>
+          <td>{{item.order.order_id}}</td>
+          <td>{{item.cutting_start_date}}</td>
+          <td>{{item.cutting_end_date}}</td>
+          <td>{{item.cut_qty}}</td>
+          <td>{{item.supervisor_name}}</td>
+        </tr>
+    </tbody>
+  </table>
+  
+</div>

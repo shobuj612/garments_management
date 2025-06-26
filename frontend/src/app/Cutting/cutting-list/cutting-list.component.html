@@ -1,0 +1,38 @@
+<div class="container">
+  <h1 class="text-success" style="text-align:  center;">Cutting list information</h1>
+  <table class="table table-bordered table-hover">
+    <thead>
+       <tr>
+      <th colspan="7" style="text-align: right; padding-right: 10px;">
+        <button (click)="mydownload()" class="btn btn-info" >Download</button>
+      </th>
+    </tr>
+      <tr>
+        <th>Cutting ID</th>
+        <th>Order ID</th>
+        <th>Cutting Start Date</th>
+        <th>Cutting End Date</th>
+        <th>Cut Qty</th>
+        <th>Supervisor Name</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Data rows -->
+       @for (item of collect_order; track  item) {
+        <tr>
+          <td>{{item.cutting_id}}</td>
+          <td>{{item.order.order_id}}</td>
+          <td>{{item.cutting_start_date}}</td>
+          <td>{{item.cutting_end_date}}</td>
+          <td>{{item.cut_qty}}</td>
+          <td>{{item.supervisor_name}}</td>
+          <td>
+            <button type="button" class="btn btn-success" (click)="Edit(item)">Edit</button>
+            <button type="button" class="btn btn-danger" (click)="Delete(item)">Delete</button> </td>
+        </tr>
+       }
+    </tbody>
+  </table>
+  
+</div>

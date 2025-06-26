@@ -1,0 +1,52 @@
+<div class="container">
+  <h1 class="text-success" style="text-align: center;">Add Shipment Information</h1>
+  <form (ngSubmit)="submission()">
+    <!--
+    <div>
+      <label class="form-label">Shipping ID:</label>
+      <input type="number" name="shipping_id" class="form-control" [(ngModel)]="ship.shipping_id">
+    </div>
+
+     -->
+    <!--<div>
+      <label class="form-label">Order ID:</label>
+      <input type="number" name="order_id" class="form-control" [(ngModel)]="ship.order.order_id">
+    </div>-->
+
+    <div>
+      <label class="form-label">Order ID:</label>
+      <select name="order_id" [(ngModel)]="ship.order.order_id">
+        <option *ngFor="let order of orders" [value]="order.order_id">
+          {{order.order_name}}
+        </option>
+      </select>
+    </div>
+
+ 
+
+    
+    <div>
+      <label class="form-label">Shipping Date:</label>
+      <input type="date" name="shipping_date" class="form-control" [(ngModel)]="ship.shipping_date">
+    </div>
+    <div>
+      <label class="form-label">Shipped Qty:</label>
+      <input type="number" name="shipped_qty" class="form-control" [(ngModel)]="ship.shipped_qty">
+    </div>
+    <div>
+      <label class="form-label">Invoice No:</label>
+      <input type="text" name="invoice_no" class="form-control" [(ngModel)]="ship.invoice_no">
+    </div>
+    <div>
+      <label class="form-label">Destination:</label>
+      <input type="text" name="destination" class="form-control" [(ngModel)]="ship.destination">
+    </div>
+    <div>
+      <label class="form-label">Carrier:</label>
+      <input type="text" name="carrier" class="form-control" [(ngModel)]="ship.carrier">
+    </div>
+    <div class="mt-4">
+      <button type="submit" class="btn btn-success">Submit</button>
+    </div>
+  </form>
+</div>

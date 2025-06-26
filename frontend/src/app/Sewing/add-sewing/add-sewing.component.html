@@ -1,0 +1,48 @@
+<div class="container">
+  <h1 class="text-success" style="text-align: center;">Add Sewing Information</h1>
+  <form class="p-4" (ngSubmit)="submission()">
+   
+    <div class="row mb-3">
+       <!--
+      <div class="col-md-6">
+        <label for="sewing_id" class="form-label">Sewing ID</label>
+        <input type="number" class="form-control" id="sewing_id" name="sewing_id" [(ngModel)]="sew.sewing_id">
+      </div>
+        -->
+      <!--<div class="col-md-6">
+        <label for="order_id" class="form-label">Order ID</label>
+        <input type="number" class="form-control" id="order_id" name="order_id" [(ngModel)]="sew.order.order_id">
+      </div>-->
+
+      <div class="col-md-6">
+        <label for="order_id" class="form-label">Order ID</label>
+        <select name="order_id" [(ngModel)]="sew.order.order_id">
+          <option *ngFor="let order of orders" [value]="order.order_id">
+            {{order.order_name}}
+          </option>
+        </select>
+      </div>
+    </div>
+  
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label for="sewing_start_date" class="form-label">Sewing Start Date</label>
+        <input type="date" class="form-control" id="sewing_start_date" name="sewing_start_date" [(ngModel)]="sew.sewing_start_date">
+      </div>
+      <div class="col-md-6">
+        <label for="sewing_end_date" class="form-label">Sewing End Date</label>
+        <input type="date" class="form-control" id="sewing_end_date" name="sewing_end_date" [(ngModel)]="sew.sewing_end_date">
+      </div>
+    </div>
+  
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label for="sewing_qty" class="form-label">Sewing Qty</label>
+        <input type="number" class="form-control" id="sewing_qty" name="sewing_qty" [(ngModel)]="sew.sewing_qty">
+      </div>
+    </div>
+  
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  
+</div>

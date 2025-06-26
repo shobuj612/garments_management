@@ -1,0 +1,42 @@
+<div class="container">
+  <h1 class="text-success" style="text-align: center;">Shipment List</h1>
+
+  <table class="table table-bordered table-hover">
+    <thead>
+       <tr>
+      <th colspan="8" style="text-align: right; padding-right: 10px;">
+        <button (click)="mydownload()" class="btn btn-info">Download</button>
+      </th>
+    </tr>
+      <tr>
+        <th>Shipping ID</th>
+        <th>Order ID</th>
+        <th>Shipping Date</th>
+        <th>Shipped Qty</th>
+        <th>Invoice No</th>
+        <th>Destination</th>
+        <th>Carrier</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Data rows -->
+       @for (item of collect_order; track item) {
+        <tr>
+          <td>{{item.shipping_id}}</td>
+          <td>{{item.order.order_id}}</td>
+          <td>{{item.shipping_date}}</td>
+          <td>{{item.shipped_qty}}</td>
+          <td>{{item.invoice_no}}</td>
+          <td>{{item.destination}}</td>
+          <td>{{item.carrier}}</td>
+          <td>
+            <button type="button" class="btn btn-success" (click)="Edit(item)">Edit</button>
+            <button type="button" class="btn btn-danger" (click)="Delete(item)">Delete</button>
+          </td>
+        </tr>
+       }
+    </tbody>
+  </table>
+  
+</div>

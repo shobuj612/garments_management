@@ -1,0 +1,94 @@
+<!-- Created with Jaspersoft Studio version 7.0.2.final -->
+<jasperReport 
+    xmlns="http://jasperreports.sourceforge.net/jasperreports"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+    name="finishing_report"
+    pageWidth="595" pageHeight="842" columnWidth="555"
+    leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20"
+    uuid="661d26ae-1891-4d9a-b5d4-809d4466b3f1">
+
+    <queryString>
+        <![CDATA[
+        SELECT finish_id,
+               finish_qty,
+               finishing_date,
+               packing_done,
+               order_id
+        FROM finishing
+        ]]>
+    </queryString>
+
+    <!-- Fields -->
+    <field name="finish_id" class="java.lang.Long"/>
+    <field name="finish_qty" class="java.lang.Integer"/>
+    <field name="finishing_date" class="java.sql.Date"/>
+    <field name="packing_done" class="java.lang.String"/>
+    <field name="order_id" class="java.lang.Long"/>
+
+    <!-- Title -->
+    <title>
+        <band height="30">
+            <staticText>
+                <reportElement x="0" y="0" width="555" height="30"/>
+                <textElement textAlignment="Center">
+                    <font size="16" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Finishing Report]]></text>
+            </staticText>
+        </band>
+    </title>
+
+    <!-- Column Headers -->
+    <columnHeader>
+        <band height="25">
+            <staticText>
+                <reportElement x="0" y="0" width="80" height="25"/>
+                <text><![CDATA[Finish ID]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="80" y="0" width="100" height="25"/>
+                <text><![CDATA[Finish Qty]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="180" y="0" width="120" height="25"/>
+                <text><![CDATA[Finishing Date]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="300" y="0" width="130" height="25"/>
+                <text><![CDATA[Packing Done]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="430" y="0" width="125" height="25"/>
+                <text><![CDATA[Order ID]]></text>
+            </staticText>
+        </band>
+    </columnHeader>
+
+    <!-- Detail Band -->
+    <detail>
+        <band height="25">
+            <textField>
+                <reportElement x="0" y="0" width="80" height="25"/>
+                <textFieldExpression><![CDATA[$F{finish_id}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="80" y="0" width="100" height="25"/>
+                <textFieldExpression><![CDATA[$F{finish_qty}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="180" y="0" width="120" height="25"/>
+                <textFieldExpression><![CDATA[$F{finishing_date}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="300" y="0" width="130" height="25"/>
+                <textFieldExpression><![CDATA[$F{packing_done}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="430" y="0" width="125" height="25"/>
+                <textFieldExpression><![CDATA[$F{order_id}]]></textFieldExpression>
+            </textField>
+        </band>
+    </detail>
+
+</jasperReport>

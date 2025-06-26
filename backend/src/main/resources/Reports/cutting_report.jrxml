@@ -1,0 +1,96 @@
+<jasperReport 
+    xmlns="http://jasperreports.sourceforge.net/jasperreports"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+    name="CuttingReport"
+    pageWidth="595" pageHeight="842" columnWidth="555" 
+    leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20"
+    uuid="524ea5aa-246e-4565-98c4-f9958adeb8fe">
+
+    <queryString>
+        <![CDATA[
+            SELECT 
+                cutting_id,
+                cut_qty,
+                cutting_end_date,
+                cutting_start_date,
+                supervisor_name,
+                order_id
+            FROM cutting
+        ]]>
+    </queryString>
+
+    <field name="cutting_id" class="java.lang.Long"/>
+    <field name="cut_qty" class="java.lang.Integer"/>
+    <field name="cutting_end_date" class="java.sql.Date"/>
+    <field name="cutting_start_date" class="java.sql.Date"/>
+    <field name="supervisor_name" class="java.lang.String"/>
+    <field name="order_id" class="java.lang.Long"/>
+
+    <title>
+        <band height="50">
+            <staticText>
+                <reportElement x="0" y="0" width="200" height="30"/>
+                <text><![CDATA[Cutting Report]]></text>
+            </staticText>
+        </band>
+    </title>
+
+    <columnHeader>
+        <band height="20">
+            <staticText>
+                <reportElement x="0" y="0" width="80" height="20"/>
+                <text><![CDATA[Cutting ID]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="85" y="0" width="80" height="20"/>
+                <text><![CDATA[Cut Qty]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="170" y="0" width="100" height="20"/>
+                <text><![CDATA[Start Date]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="275" y="0" width="100" height="20"/>
+                <text><![CDATA[End Date]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="380" y="0" width="100" height="20"/>
+                <text><![CDATA[Supervisor]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="485" y="0" width="70" height="20"/>
+                <text><![CDATA[Order ID]]></text>
+            </staticText>
+        </band>
+    </columnHeader>
+
+    <detail>
+        <band height="20">
+            <textField>
+                <reportElement x="0" y="0" width="80" height="20"/>
+                <textFieldExpression><![CDATA[$F{cutting_id}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="85" y="0" width="80" height="20"/>
+                <textFieldExpression><![CDATA[$F{cut_qty}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="170" y="0" width="100" height="20"/>
+                <textFieldExpression><![CDATA[$F{cutting_start_date}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="275" y="0" width="100" height="20"/>
+                <textFieldExpression><![CDATA[$F{cutting_end_date}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="380" y="0" width="100" height="20"/>
+                <textFieldExpression><![CDATA[$F{supervisor_name}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="485" y="0" width="70" height="20"/>
+                <textFieldExpression><![CDATA[$F{order_id}]]></textFieldExpression>
+            </textField>
+        </band>
+    </detail>
+</jasperReport>

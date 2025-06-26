@@ -1,0 +1,27 @@
+<div class="container">
+  <h1 class="text-success" style="text-align: center;">Finishing List</h1>
+  <table class="table table-bordered table-hover">
+    <thead>
+      
+      <tr>
+        <th>Finish ID</th>
+        <th>Order ID</th>
+        <th>Finishing Date</th>
+        <th>Finish Qty</th>
+        <th>Packing Done</th>
+      
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Data rows -->
+        <tr>
+          <td>{{item.finish_id}}</td>
+          <td>{{item.order.order_id}}</td>
+          <td>{{item.packing_done}}</td>
+          <td>{{item.finishing_date}}</td>
+          <td>{{item.finish_qty}}</td>
+        </tr>
+    </tbody>
+  </table>
+  
+</div>

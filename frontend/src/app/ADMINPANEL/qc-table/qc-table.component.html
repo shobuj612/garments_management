@@ -1,0 +1,30 @@
+<div class="container">
+  <h1 class="text-success" style="text-align: center;">Quality Control List</h1>
+
+  <table class="table table-bordered table-hover">
+    <thead>
+      
+      <tr>
+        <th>QC ID</th>
+        <th>Order ID</th>
+        <th>Inspection Date</th>
+        <th>Passed Qty</th>
+        <th>Rejected Qty</th>
+        <th>Remarks</th>
+    
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Data rows -->
+        <tr>
+        <td>{{item.qc_id}}</td>
+        <td>{{item.order.order_id}}</td>
+        <td>{{item.inspection_date}}</td>
+        <td>{{item.rejected_qty}}</td>
+        <td>{{item.remarks}}</td>
+        <td>{{item.passed_qty}}</td>
+        </tr>
+    </tbody>
+  </table>
+  
+</div>

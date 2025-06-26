@@ -1,0 +1,57 @@
+<div class="container">
+  <h1 class="text-success" style="text-align: center;"> Add Order Belong to Marchendiser</h1>
+
+  <form class="container mt-4" (ngSubmit)="submission()">
+    
+    <div class="row mb-3">
+      <!--
+      <div class="col-md-6">
+        <label for="merch_id" class="form-label">Merch ID:</label>
+        <input type="number" name="merch_id" id="merch_id" class="form-control" [(ngModel)]="marchendiser.merch_id" />
+      </div>
+      -->
+      <!--
+      <div class="col-md-6">
+        <label for="order_id" class="form-label">Order ID:</label>
+        <input type="number" name="order_id" id="order_id" class="form-control" [(ngModel)]="marchendiser.order.order_id" />
+      </div>
+    </div>
+      -->
+    <div class="col-md-6">
+        <label for="order_id" class="form-label">Order ID:</label>
+        <select name="order_id" [(ngModel)]="marchendiser.order.order_id">
+        <option *ngFor="let order of orders" [value]="order.order_id">
+          {{order.order_name}}
+          </option>
+        </select>
+      </div>
+    </div>
+    
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label for="merchandiser_name" class="form-label">Merchandiser Name:</label>
+        <input type="text" name="merchandiser_name" id="merchandiser_name" class="form-control" [(ngModel)]="marchendiser.merchandiser_name" />
+      </div>
+      <div class="col-md-6">
+        <label for="sampling_done" class="form-label">Sampling Done :</label>
+        <input type="text" name="sampling_done" id="sampling_done" class="form-control"  [(ngModel)]="marchendiser.sampling_done"/>
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label for="approval_date" class="form-label">Approval Date:</label>
+        <input type="date" name="approval_date" id="approval_date" class="form-control" [(ngModel)]="marchendiser.approval_date" />
+      </div>
+      <div class="col-md-6">
+        <label for="remarks" class="form-label">Remarks:</label>
+        <input type="text" name="remarks" id="remarks" class="form-control" [(ngModel)]="marchendiser.remarks" />
+      </div>
+    </div>
+
+    <div class="text-end">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </form>
+
+</div>

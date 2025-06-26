@@ -1,0 +1,24 @@
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>Buyer Name</th>
+      <th>Order Name</th>
+      <th>Style No</th>
+      <th>Order Qty</th>
+      <th>Order Date</th>
+      <th>Delivery Date</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{ items.buyer.buyerName }}</td>
+      <td>{{ items.order_name }}</td>
+      <td>{{ items.style_no }}</td>
+      <td>{{ items.order_qty }}</td>
+      <td>{{ items.order_date | date: 'shortDate' }}</td>
+      <td>{{ items.delivery_date | date: 'shortDate' }}</td>
+      <td>{{ items.status }}</td>
+    </tr>
+  </tbody>
+</table>

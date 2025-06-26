@@ -1,0 +1,43 @@
+<div class="container">
+  <h1 class="text-success" style="text-align: center;">Add Warehouse Information</h1>
+  <form class="p-4" (ngSubmit)="submission()">
+
+    
+      <div class="row mb-3">
+        <!--
+        <div class="col-md-6">
+          <label for="warehouse_id" class="form-label">Warehouse ID</label>
+          <input type="number" class="form-control" id="warehouse_id" name="warehouse_id" [(ngModel)]="ware.warehouse_id">
+        </div>
+        -->
+       <!-- <div class="col-md-6">
+          <label for="order_id" class="form-label">Order ID</label>
+          <input type="number" class="form-control" id="order_id" name="order_id" [(ngModel)]="ware.order.order_id">
+        </div>-->
+
+         <div class="col-md-6">
+          <label for="order_id" class="form-label">Order ID</label>
+          <select name="order_id" [(ngModel)]="ware.order.order_id">
+            <option *ngFor="let order of orders" [value]="order.order_id">
+              {{order.order_name}}
+            </option>
+          </select>
+        </div>
+      </div>
+     
+
+     
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label for="received_date" class="form-label">Received Date</label>
+          <input type="date" class="form-control" id="received_date" name="received_date" [(ngModel)]="ware.received_date">
+        </div>
+        <div class="col-md-6">
+          <label for="stored_qty" class="form-label">Stored Qty</label>
+          <input type="number" class="form-control" id="stored_qty" name="stored_qty" [(ngModel)]="ware.stored_qty">
+        </div>
+      </div>
+    
+      <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>

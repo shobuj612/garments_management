@@ -1,0 +1,79 @@
+<form class="container mt-4" (ngSubmit)="submission()">
+  <div class="row mb-3">
+    <!--
+    <div class="col-md-6">
+      <label for="buyerId" class="form-label">Buyer ID:</label>
+      <input
+        type="number"
+        class="form-control"
+        id="buyerId"
+        name="buyerId"
+        [(ngModel)]="buy.buyerId"
+        required
+      />
+    </div>
+    -->
+    <div class="col-md-6">
+      <label for="buyerName" class="form-label">Buyer Name:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="buyerName"
+        name="buyerName"
+        [(ngModel)]="buy.buyerName"
+      />
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <div class="col-md-6">
+      <label for="contactPerson" class="form-label">Contact Person:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="contactPerson"
+        name="contactPerson"
+        [(ngModel)]="buy.contactPerson"
+      />
+    </div>
+
+    <div class="col-md-6">
+      <label for="email" class="form-label">Email:</label>
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        name="email"
+        [(ngModel)]="buy.email"
+      />
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <div class="col-md-6">
+      <label for="phone" class="form-label">Phone:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="phone"
+        name="phone"
+        [(ngModel)]="buy.phone"
+      />
+    </div>
+
+    <div class="col-md-6">
+      <label for="address" class="form-label">Address:</label>
+      <textarea
+        class="form-control"
+        id="address"
+        name="address"
+        rows="2"
+        [(ngModel)]="buy.address"
+      ></textarea>
+    </div>
+  </div>
+
+  <div class="text-end">
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</form>

@@ -1,0 +1,150 @@
+<!-- Horizontal Navbar -->
+<nav class="navbar navbar-expand-sm justify-content-between fixed-top" style="border: 3px solid #a0a1a3; background-color: #5dabdf;">
+
+  <ul class="navbar-nav">
+    <li class="nav-item"><a routerLink="/" class="nav-link text-success">Home</a></li>
+    <li class="nav-item"><a routerLink="/about" class="nav-link text-success">About</a></li>
+    <li class="nav-item"><a routerLink="/contact" class="nav-link text-success">Contact</a></li>
+    <li class="nav-item dropdown">
+      <a href="#" class="nav-link dropdown-toggle text-success" data-bs-toggle="dropdown">Notice</a>
+      <ul class="dropdown-menu">
+        <li><a routerLink="/tender" class="dropdown-item bg-light text-success">Tender</a></li>
+        <li><a routerLink="/etender" class="dropdown-item bg-dark text-success">e-Tender</a></li>
+        <li><a routerLink="/circuler" class="dropdown-item bg-info text-success">Circular</a></li>
+        <li><a routerLink="/shownotice" class="dropdown-item bg-warning text-success">allnotice</a></li>
+      </ul>
+    </li>
+    <li class="nav-item"><a routerLink="/portal" class="nav-link text-success">JobPortal</a></li>
+  </ul>
+
+  <!-- Right-aligned buttons for Login and Logout -->
+  <ul class="navbar-nav">
+    <!-- Login Button -->
+    <li class="nav-item">
+      <a  *ngIf="!IsGetToken()"  routerLink="/login" class="btn btn-info text-success nav-link">Login</a>
+    </li>
+
+    <!-- Logout Button -->
+    <li class="nav-item">
+      <button *ngIf="IsGetToken()" (click)="onLogout()" class="btn btn-info text-success nav-link">Logout</button>
+    </li>
+  </ul>
+</nav>
+
+
+<!-- Vertical Sidebar for Roles -->
+<nav class="position-fixed p-3"
+    style="top: 56px; left: 0; height: calc(100vh - 56px); width: 180px; border: 3px solid #a0a1a3; background-color: #5dabdf">
+  <ul class="nav flex-column">
+    <!--thi is Admin Panel-->
+    <li *ngIf="hasRole('ROLE_ADMIN')" class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Admin</a>
+      <ul class="dropdown-menu">
+        <li><a routerLink="/production" class="dropdown-item">ProductionDashbord</a></li>
+        <li><a routerLink="/attendence" class="dropdown-item">AttendenceList</a></li>
+        <li><a routerLink="/orderinformation" class="dropdown-item">OrderInformation</a></li>
+      </ul>
+    </li>
+     <!--THIS IS HR DEPARTMENT-->
+     <li *ngIf="hasRole('ROLE_ADMIN')|| hasRole('ROLE_HR')" class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">HR</a>
+      <ul class="dropdown-menu">
+        <li><a routerLink="/regis" class="dropdown-item">Employee Registration</a></li>
+        <li><a routerLink="/atten" class="dropdown-item">Employee Attendence</a></li>
+        <li><a routerLink="/pay" class="dropdown-item">Employee Payment</a></li>
+      </ul>
+    </li>
+
+    <!-- Marchendising -->
+    <li *ngIf="hasRole('ROLE_MARCH')||hasRole('ROLE_ADMIN')" class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Marchendising</a>
+      <ul class="dropdown-menu">
+        <li><a routerLink="/bl" class="dropdown-item">Buyer List</a></li>
+        <li><a routerLink="/ab" class="dropdown-item">Add Buyer</a></li>
+        <li><a routerLink="/ol" class="dropdown-item">Order List</a></li>
+        <li><a routerLink="/ao" class="dropdown-item">Add Order</a></li>
+        <li><a routerLink="/ml" class="dropdown-item">Order Control</a></li>
+        <li><a routerLink="/am" class="dropdown-item">Add Order Control</a></li>
+        <li><a routerLink="/job" class="dropdown-item">JobPost</a></li>
+        <li><a routerLink="/dash" class="dropdown-item">Dashboard</a></li>
+      </ul>
+    </li>
+
+    <!-- Design -->
+    <li *ngIf="hasRole('ROLE_MARCH') || hasRole('ROLE_DESIGN')||hasRole('ROLE_ADMIN')" class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Design</a>
+      <ul class="dropdown-menu">
+        <li><a routerLink="/dl" class="dropdown-item">Design List</a></li>
+        <li><a routerLink="/ad" class="dropdown-item">Add Design</a></li>
+        <li><a routerLink="/send-design" class="dropdown-item">Send Design</a></li>
+      </ul>
+    </li>
+
+    <!-- Fabric -->
+    <li *ngIf="hasRole('ROLE_MARCH') || hasRole('ROLE_FABRIC')||hasRole('ROLE_ADMIN')" class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Fabric</a>
+      <ul class="dropdown-menu">
+        <li><a routerLink="/fl" class="dropdown-item">Fabric List</a></li>
+        <li><a routerLink="/af" class="dropdown-item">Add Fabric</a></li>
+        <li><a routerLink="/send-fabric" class="dropdown-item">Send Fabric</a></li>
+      </ul>
+    </li>
+
+    <!-- Cutting -->
+    <li *ngIf="hasRole('ROLE_MARCH') || hasRole('ROLE_CUTTING')||hasRole('ROLE_ADMIN')" class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Cutting</a>
+      <ul class="dropdown-menu">
+        <li><a routerLink="/cl" class="dropdown-item">Cutting List</a></li>
+        <li><a routerLink="/ac" class="dropdown-item">Add Cutting</a></li>
+        <li><a routerLink="/fabric-info" class="dropdown-item">Fabric Info</a></li>
+        <li><a routerLink="/add-fabric-info" class="dropdown-item">Add Fabric Info</a></li>
+      </ul>
+    </li>
+
+    <!-- Sewing -->
+    <li *ngIf="hasRole('ROLE_MARCH') || hasRole('ROLE_SEWING')||hasRole('ROLE_ADMIN')" class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Sewing</a>
+      <ul class="dropdown-menu">
+        <li><a routerLink="/sl" class="dropdown-item">Sewing List</a></li>
+        <li><a routerLink="/as" class="dropdown-item">Add Sewing</a></li>
+      </ul>
+    </li>
+
+    <!-- Finishing -->
+    <li *ngIf="hasRole('ROLE_MARCH') || hasRole('ROLE_FINISHING')||hasRole('ROLE_ADMIN')" class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Finishing</a>
+      <ul class="dropdown-menu">
+        <li><a routerLink="/fli" class="dropdown-item">Finishing List</a></li>
+        <li><a routerLink="/afi" class="dropdown-item">Add Finishing</a></li>
+      </ul>
+    </li>
+
+    <!-- QC -->
+    <li *ngIf="hasRole('ROLE_MARCH') || hasRole('ROLE_QC')||hasRole('ROLE_ADMIN')" class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">QC</a>
+      <ul class="dropdown-menu">
+        <li><a routerLink="/ql" class="dropdown-item">QC List</a></li>
+        <li><a routerLink="/aq" class="dropdown-item">Add QC</a></li>
+      </ul>
+    </li>
+
+    <!-- Warehouse -->
+    <li *ngIf="hasRole('ROLE_MARCH') || hasRole('ROLE_WAREHOUSE')||hasRole('ROLE_ADMIN')" class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Warehouse</a>
+      <ul class="dropdown-menu">
+        <li><a routerLink="/cwl" class="dropdown-item">Collection List</a></li>
+        <li><a routerLink="/aw" class="dropdown-item">Add Collection</a></li>
+      </ul>
+    </li>
+
+    <!-- Shipping -->
+    <li *ngIf="hasRole('ROLE_MARCH') || hasRole('ROLE_SHIPPING')||hasRole('ROLE_ADMIN')" class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Shipping</a>
+      <ul class="dropdown-menu">
+        <li><a routerLink="/shiplist" class="dropdown-item">Shipment List</a></li>
+        <li><a routerLink="/addship" class="dropdown-item">Add Shipment</a></li>
+      </ul>
+    </li>
+
+  </ul>
+</nav>

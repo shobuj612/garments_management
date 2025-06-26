@@ -1,0 +1,54 @@
+<div class="container">
+  <h1 class="text-success" style="text-align: center;">Add Quality Control</h1>
+
+  <form class="p-4" (ngSubmit)="submission()">
+   
+    <div class="row mb-3">
+       <!--
+      <div class="col-md-6">
+        <label for="qc_id" class="form-label">QC ID</label>
+        <input type="number" class="form-control" id="qc_id" name="qc_id" [(ngModel)]="qc.qc_id">
+      </div>
+         -->
+      <!--<div class="col-md-6">
+        <label for="order_id" class="form-label">Order ID</label>
+        <input type="number" class="form-control" id="order_id" name="order_id" [(ngModel)]="qc.order.order_id">
+      </div>-->
+
+      <div class="col-md-6">
+        <label for="order_id" class="form-label">Order ID</label>
+        <select name="order_id" [(ngModel)]="qc.order.order_id">
+          <option *ngFor="let order of orders" [value]="order.order_id">
+            {{order.order_name}}
+          </option>
+        </select>
+      </div>
+    </div>
+  
+   
+    
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label for="inspection_date" class="form-label">Inspection Date</label>
+        <input type="date" class="form-control" id="inspection_date" name="inspection_date" [(ngModel)]="qc.inspection_date">
+      </div>
+      <div class="col-md-6">
+        <label for="passed_qty" class="form-label">Passed Qty</label>
+        <input type="number" class="form-control" id="passed_qty" name="passed_qty" [(ngModel)]="qc.passed_qty">
+      </div>
+    </div>
+  
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label for="rejected_qty" class="form-label">Rejected Qty</label>
+        <input type="number" class="form-control" id="rejected_qty" name="rejected_qty" [(ngModel)]="qc.rejected_qty">
+      </div>
+      <div class="col-md-6">
+        <label for="remarks" class="form-label">Remarks</label>
+        <input type="text" class="form-control" id="remarks" name="remarks" [(ngModel)]="qc.remarks">
+      </div>
+    </div>
+  
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
